@@ -53,7 +53,7 @@ public void map(Text key, Text value, Context context) throws IOException, Inter
 			if(flag)outputValue="Y";
 			else outputValue="N";
 			
-			outputKey.set(key+" : "+outputValue);
+			outputKey.set(key+":"+outputValue+","+bestLabels[0]+","+bestLabels[1]+","+bestLabels[2]);
 			context.write(outputKey, nullWritable);
 		}
 		private static void initClassifier(Context context) throws IOException {
@@ -93,7 +93,7 @@ private static void loadProfessions() throws IOException {
 				line=sc.nextLine();
 				if(line==null)
 					continue;
-				String [] splt=line.split(":",2);
+				String [] splt=line.split(" : ");
 				if(splt.length<2)
 					continue;
 				 profString=splt[1];

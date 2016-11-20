@@ -78,7 +78,7 @@ public class Classifier {
 		
 		//calculates the tfidf of the lemmaIndex vector
 		int documentCount = documentFrequency.get(-1).intValue();
-		Vector vector = new RandomAccessSparseVector(10000);
+		Vector vector = new RandomAccessSparseVector(dictionary.size());
 		TFIDF tfidf = new TFIDF();		for (StringInteger entry:lemmaIndexList) {
 			String word = entry.getString();
 			int count = entry.getValue();
@@ -87,7 +87,7 @@ public class Classifier {
 				continue;
 			Long freq = documentFrequency.get(wordId);
 			if(freq==null)
-				freq=(long)0;
+				freq=(long)0;//documentCount;
 			System.out.println(count);
 			System.out.println(freq.intValue());
 			System.out.println(wordCount);

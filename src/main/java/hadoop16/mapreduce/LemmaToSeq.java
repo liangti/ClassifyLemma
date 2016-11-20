@@ -101,7 +101,7 @@ public class LemmaToSeq {
 			line=sc.nextLine();
 			if(line==null)
 				continue;
-			String[] splt=line.split(":",2);
+			String[] splt=line.split(" : ");
 			if(splt.length<2)
 				continue;
 			name=splt[0].trim();

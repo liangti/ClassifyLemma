@@ -93,9 +93,8 @@ public class SplitProfession {
             //PrintWriter out2=new PrintWriter("/Users/uuisafresh/Documents/workspace/ClassifyLemma/src/main/java/Split/p2.txt"); 
             int num=0;
             while(in.hasNext()){  
-                String str=in.nextLine();//.split(":")[1];  
-                //if(str.equals(" Y"))num++;
-                System.out.println(str); 
+                String str=in.nextLine().split(":")[1];  
+                if(str.charAt(0)=='Y')num++;
                 //if(num<testCount)out2.write(str+"\n");
                 //else out1.write(str+"\n");
                 
@@ -110,7 +109,7 @@ public class SplitProfession {
     }  
      
     public static void main(String argv[]){
-        String filePath = "/Users/uuisafresh/Downloads/professions.txt";
+        String filePath = "/Users/uuisafresh/Documents/hadoop/part-r-00000";
 //      "res/";
         readTxtFile(filePath);
     }
