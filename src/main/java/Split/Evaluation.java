@@ -41,7 +41,7 @@ public class Evaluation {
     }  
      
     public static void main(String argv[]){
-        String filePath = "/Users/uuisafresh/Documents/hadoop/part-r-00000";
+        String filePath = "/Users/uuisafresh/Documents/hadoop/lt";
 //      "res/";
         readTxtFile(filePath);
     }

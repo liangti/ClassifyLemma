@@ -51,7 +51,7 @@ public class LemmaToSeq {
 					continue;
 				
 				Text value=createTextFromLemma(split[1]);
-				
+				//for each profession write a single <key, value> pair into the sequence file
 				for(int j=0;j<prof.length;j++){
 					Text key=new Text("/"+prof[j]+"/1");
 				    writer.append(key, value);

@@ -87,7 +87,7 @@ public class Classifier {
 				continue;
 			Long freq = documentFrequency.get(wordId);
 			if(freq==null)
-				freq=(long)0;//documentCount;
+				freq=(long)0;
 			System.out.println(count);
 			System.out.println(freq.intValue());
 			System.out.println(wordCount);
@@ -105,6 +105,10 @@ public class Classifier {
 		//obtain the 3 label index with higher wieght
 		int[] bestIndecis={-2,-2,-2};
 		double[] bestScores={-Double.MAX_VALUE,-Double.MAX_VALUE,-Double.MAX_VALUE};
+		
+		
+		//This algorithm just acts like a stack
+		
 		for(Element element: resultVector.all()) {
 			int labelIndex = element.index();
 			double score = element.get();
@@ -131,6 +135,7 @@ public class Classifier {
 				
 			}
 		}
+		
 String [] bestLabels=new String[3];
 for(int i=0;i<bestLabels.length;i++)
 	bestLabels[i]=labelIndex.get(bestIndecis[i]);

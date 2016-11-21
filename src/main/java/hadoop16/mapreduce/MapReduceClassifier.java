@@ -38,8 +38,10 @@ public class MapReduceClassifier {
 			initClassifier(context);
 			loadProfessions();
 		}
+		
 public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
 			String[] prof=professions.get(key.toString().trim());
+			//here professions is test set, we find those people in lemma index and classify
 			if(prof==null)
 				return;
 			String[] bestLabels = classifier.classify(value.toString());
@@ -68,8 +70,8 @@ public void map(Text key, Text value, Context context) throws IOException, Inter
 
 private static void loadProfessions() throws IOException {
 		
-			
-			String PROFESSIONS_FILE = "p1.txt";
+			//p2.txt is test set
+			String PROFESSIONS_FILE = "p2.txt";
 			
 			ClassLoader cl = MapReduceClassifier.class.getClassLoader();
 			
