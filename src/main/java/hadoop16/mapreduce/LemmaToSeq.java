@@ -49,9 +49,13 @@ public class LemmaToSeq {
 				prof=professions.get(split[0]);
 				if(prof==null)
 					continue;
-				Text key=new Text("/"+prof[0]+"/1");
+				
 				Text value=createTextFromLemma(split[1]);
-				writer.append(key, value);
+				
+				for(int j=0;j<prof.length;j++){
+					Text key=new Text("/"+prof[j]+"/1");
+				    writer.append(key, value);
+				}
 			}
 		}
 		writer.close();
